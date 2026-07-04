@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
-  <!-- Ghost facing down: head pointing downwards, tentacles at the top, muted gold fill -->
-  <path d="M 20 30 C 20 25, 30 25, 35 30 C 40 25, 50 25, 55 30 C 60 25, 70 25, 80 30 L 80 50 A 30 30 0 0 0 20 50 Z" fill="#cdaf7d" />
-  <!-- Eyes looking downwards near the bottom head region -->
-  <circle cx="40" cy="42" r="5" fill="#080808" />
-  <circle cx="60" cy="42" r="5" fill="#080808" />
-</svg>
