@@ -1,0 +1,41 @@
+# Ghostty Gothic Gold Theme Configuration
+
+# Fonts
+font-family = "FiraCode Nerd Font Mono"
+font-style = "Bold"
+font-style-bold = "Bold"
+font-size = 14
+
+# Window Layout
+window-padding-x = 10
+window-padding-y = 10
+window-decoration = false
+
+# Theme Colors
+config-file = ?colors.conf
+selection-background = #d4af37
+selection-foreground = #080808
+background = #0d0d0d
+foreground = #f5f5dc
+
+# Background Opacity (Glassmorphism)
+background-opacity = 0.85
+background-blur = true
+
+# Theme Colors (The 16 terminal colors, gold/amber ANSI on black)
+palette = 0=#121212
+palette = 8=#2d2d2d
+palette = 1=#ff8c00
+palette = 9=#ffa500
+palette = 2=#bfa260
+palette = 10=#d4af37
+palette = 3=#cd7f32
+palette = 11=#ffbf00
+palette = 4=#8a7355
+palette = 12=#cdaf7d
+palette = 5=#5c4a36
+palette = 13=#a88f70
+palette = 6=#c5a059
+palette = 14=#e6c280
+palette = 7=#f5f5dc
+palette = 15=#faf9f6

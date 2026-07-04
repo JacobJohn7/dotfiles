@@ -1,0 +1,56 @@
+# Ignore everything by default
+*
+.*
+
+# Keep Git config and .gitignore itself
+!/.gitignore
+
+# Whitelist Zsh, Bash config files in the home directory
+!/.zshrc
+!/.zshrc.gold.bak
+!/.p10k.zsh
+!/.bashrc
+!/.bash_profile
+!/.zprofile
+
+# Whitelist the .config folder itself (so Git traverses it)
+!/.config/
+
+# Whitelist specific configuration folders and all their contents recursively
+!/.config/hypr/
+!/.config/hypr/**
+!/.config/waybar/
+!/.config/waybar/**
+!/.config/wofi/
+!/.config/wofi/**
+!/.config/swaync/
+!/.config/swaync/**
+!/.config/swayosd/
+!/.config/swayosd/**
+!/.config/wlogout/
+!/.config/wlogout/**
+!/.config/fastfetch/
+!/.config/fastfetch/**
+!/.config/ghostty/
+!/.config/ghostty/**
+!/.config/cava/
+!/.config/cava/**
+!/.config/matugen/
+!/.config/matugen/**
+
+# Explicit safety overrides to exclude sensitive files/folders anywhere in the repo
+*cache*
+*Cache*
+node_modules/
+*.log
+*secret*
+*token*
+*key*
+*.key
+*.pem
+id_rsa*
+id_ecdsa*
+id_ed25519*
+id_dsa*
+authorized_keys
+known_hosts

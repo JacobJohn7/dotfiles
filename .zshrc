@@ -1,0 +1,62 @@
+# ZSH Config - Gothic Gold Edition
+# Custom Golden & Black layout using Oh My Zsh.
+
+# Path to your Oh My Zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+
+# Set name of the theme to load.
+ZSH_THEME="golden-black"
+
+# Which plugins to load from Oh My Zsh.
+plugins=(git)
+
+# Source Oh My Zsh
+source $ZSH/oh-my-zsh.sh
+
+# Shell Options
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE
+setopt APPEND_HISTORY
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+
+# Add ~/.local/bin to PATH so agy (Antigravity CLI) works
+export PATH="$HOME/.local/bin:$PATH"
+
+# Colors
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#8a7355,bg=none,bold" # Muted bronze for auto-suggestions
+
+# Source Plugins (Assuming installed from Arch repos)
+if [ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
+    source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
+if [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+    source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+    # Custom Gothic Gold Syntax Highlighting Colors
+    typeset -gA ZSH_HIGHLIGHT_STYLES
+    ZSH_HIGHLIGHT_STYLES[default]='none'
+    ZSH_HIGHLIGHT_STYLES[line]='none'
+    ZSH_HIGHLIGHT_STYLES[command]='fg=#d4af37,bg=none,bold'
+    ZSH_HIGHLIGHT_STYLES[builtin]='fg=#d4af37,bg=none,bold'
+    ZSH_HIGHLIGHT_STYLES[alias]='fg=#d4af37,bg=none,bold'
+    ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=#b8860b,bg=none,bold'
+    ZSH_HIGHLIGHT_STYLES[path]='fg=#f5f5dc,bg=none'
+    ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=#8a7355,bg=none'
+    ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=#8a7355,bg=none'
+    ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=#cd7f32,bg=none'
+    ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=#cd7f32,bg=none'
+fi
+
+# Aliases
+alias ls='ls --color=auto'
+alias ll='ls -lh --color=auto'
+alias la='ls -lha --color=auto'
+alias grep='grep --color=auto'
+
+# Clear screen and run fastfetch on startup
+clear
+fastfetch
+
+

@@ -1,0 +1,17 @@
+# Wofi Mandalorian Theme Configuration
+width=400
+height=500
+location=center
+show=drun
+prompt=Search Realm...
+filter_rate=100
+allow_markup=true
+no_actions=true
+halign=fill
+valign=start
+content_halign=fill
+insensitive=true
+line_wrap=word
+allow_images=true
+image_size=48
+

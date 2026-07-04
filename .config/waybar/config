@@ -1,0 +1,159 @@
+{
+    "layer": "top",
+    "position": "left",
+    "width": 45,
+    "margin-top": 10,
+    "margin-bottom": 10,
+    "margin-left": 10,
+    "margin-right": 0,
+    "spacing": 1,
+    "exclusive": true,
+
+    "modules-left": ["custom/power", "hyprland/workspaces", "hyprland/submap"],
+    "modules-center": ["clock"],
+    "modules-right": ["mpris", "pulseaudio", "cpu", "memory", "battery", "custom/dnd", "custom/notification", "group/tray-drawer"],
+
+    "group/tray-drawer": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "tray-child",
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "custom/tray-icon",
+            "tray"
+        ]
+    },
+
+    "custom/tray-icon": {
+        "format": "󱊖", // Elegant gothic drawer chest/box icon
+        "tooltip": false
+    },
+
+    "tray": {
+        "icon-size": 16,
+        "spacing": 8
+    },
+
+    "mpris": {
+        "format": "{player_icon}",
+        "format-paused": "{status_icon}",
+        "player-icons": {
+            "default": "▶",
+            "spotify": "",
+            "firefox": "",
+            "zen-browser": "",
+            "chrome": ""
+        },
+        "status-icons": {
+            "paused": "⏸"
+        },
+        "tooltip-format": "{dynamic}"
+    },
+
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": false,
+        "on-click": "activate",
+        "format": "{icon}",
+        "ignore-workspaces": [
+            "^(1[1-9]|[2-9][0-9]|[1-9][0-9]{2,})$"
+        ],
+        "format-icons": {
+            "1": "I",
+            "2": "II",
+            "3": "III",
+            "4": "IV",
+            "5": "V",
+            "6": "I",
+            "7": "II",
+            "8": "III",
+            "9": "IV",
+            "10": "V",
+            "default": "I"
+        }
+    },
+    "clock": {
+        "format": "{:%I\n%M\n%p}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+    "cpu": {
+        "format": "{usage}%",
+        "tooltip": true,
+        "tooltip-format": "CPU Usage: {usage}%"
+    },
+    "memory": {
+        "format": "{percentage}%",
+        "tooltip": true,
+        "tooltip-format": "Memory: {used}GB / {total}GB ({percentage}%)"
+    },
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}",
+        "format-charging": "",
+        "format-plugged": "",
+        "format-alt": "{capacity}%",
+        "format-icons": ["", "", "", "", ""],
+        "tooltip-format": "Battery: {capacity}% ({timeTo})"
+    },
+    "pulseaudio": {
+        "format": "{icon}",
+        "format-bluetooth": "",
+        "format-bluetooth-muted": " ",
+        "format-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "tooltip-format": "Volume: {volume}% {format_source}",
+        "on-click": "pavucontrol"
+    },
+    "custom/notification": {
+        "tooltip": false,
+        "format": "{icon}",
+        "format-icons": {
+            "notification": "<span foreground='#800020'><sup></sup></span>",
+            "none": "",
+            "dnd-notification": "<span foreground='#800020'><sup></sup></span>",
+            "dnd-none": "",
+            "inhibited-notification": "<span foreground='#800020'><sup></sup></span>",
+            "inhibited-none": "",
+            "dnd-inhibited-notification": "<span foreground='#800020'><sup></sup></span>",
+            "dnd-inhibited-none": ""
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
+    },
+    "custom/dnd": {
+        "tooltip": false,
+        "format": "{icon}",
+        "format-icons": {
+            "dnd": "",
+            "none": ""
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -d -sw",
+        "escape": true
+    },
+    "custom/power": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "/home/mello/.config/hypr/Scripts/power-menu.sh"
+    }
+}

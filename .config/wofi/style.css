@@ -1,0 +1,75 @@
+/* Wofi Gothic Gold Theme Stylesheet */
+
+window {
+    margin: 0px;
+    border: 2px solid #d4af37; /* Antique Gold */
+    border-radius: 12px;
+    background-color: rgba(8, 8, 8, 0.90); /* Deep Black */
+    font-family: "MesloLGS NF", sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+#input {
+    margin: 5px;
+    border: 1px solid #1c1c1c;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: rgba(28, 28, 28, 0.5);
+    color: #f5f5dc;
+}
+
+#input:focus {
+    border: 1px solid #d4af37;
+    background-color: rgba(28, 28, 28, 0.8);
+    color: #ffffff;
+}
+
+#inner-box {
+    margin: 5px;
+    border: none;
+    background-color: transparent;
+}
+
+#outer-box {
+    margin: 10px;
+    border: none;
+    background-color: transparent;
+}
+
+#scroll {
+    margin: 0px;
+    border: none;
+}
+
+#text {
+    margin: 0px 4px;
+    padding: 0px;
+    border: none;
+    color: #f5f5dc;
+    min-height: 0px;
+}
+
+#entry image {
+    min-width: 32px;
+    min-height: 32px;
+    margin: 0px 4px;
+    padding: 0px;
+}
+
+#entry {
+    border: none;
+    border-radius: 8px;
+    padding: 4px;
+    margin: 2px 0px;
+    min-height: 0px;
+}
+
+#entry:selected {
+    background-color: #d4af37;
+    color: #080808;
+}
+
+#text:selected {
+    color: #080808;
+}

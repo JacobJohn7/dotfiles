@@ -1,0 +1,25 @@
+# Cava Mandalorian Theme Configuration
+
+[general]
+framerate = 60
+bars = 0
+bar_width = 2
+bar_spacing = 1
+
+[input]
+method = pipewire
+source = auto
+
+[output]
+method = ncurses
+
+[color]
+gradient = 1
+gradient_color_1 = '#2e7d32'
+gradient_color_2 = '#388e3c'
+gradient_color_3 = '#5c8a5c'
+gradient_color_4 = '#8f8f6b'
+gradient_color_5 = '#bca885'
+gradient_color_6 = '#ae7652'
+gradient_color_7 = '#8c5a3c'
+gradient_color_8 = '#573d2b'

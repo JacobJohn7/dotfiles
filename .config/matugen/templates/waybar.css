@@ -1,0 +1,228 @@
+/* Static Gothic Gold Theme Variables */
+@define-color base            #080808; /* Deep Gothic Black */
+@define-color mantle          #121212; /* Dark Charcoal */
+@define-color text            #f5f5dc; /* Cream / Off-white */
+@define-color subtext0        #cdaf7d; /* Antique Gold */
+@define-color subtext1        #8a7355; /* Muted Bronze */
+@define-color primary         #d4af37; /* Antique Gold */
+@define-color secondary       #cd7f32; /* Muted Bronze/Copper */
+@define-color tertiary        #b87333; /* Copper */
+@define-color accent_red      #800020; /* Blood Red */
+@define-color accent_blue     #4c6a85; /* Muted Steel Blue */
+@define-color accent_teal     #3b6b66; /* Dark Sea Teal */
+@define-color accent_yellow   #b38b36; /* Dark Amber */
+
+/* Gothic Gold & Deep Black Waybar Theme (Vertical Orientation) */
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "MesloLGS NF", "Fira Code", monospace;
+    font-size: 11px;
+    font-weight: bold;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: rgba(8, 8, 8, 0.55); /* Translucent dark background */
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    border-radius: 16px; /* Floating rounded bar look */
+    color: @text;
+}
+
+/* Rounded Pill Modules styling (generic interactive buttons) */
+#clock,
+#battery,
+#pulseaudio,
+#mpris,
+#submap,
+#custom-power,
+#custom-tray-icon,
+#custom-notification,
+#custom-dnd {
+    padding: 6px 0px;
+    margin: 4px 5px;
+    background-color: rgba(18, 18, 18, 0.75);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 10px;
+    color: @text;
+    transition: all 0.3s ease;
+}
+
+/* Plain percentage text styling for CPU & Memory (No pill borders or backgrounds) */
+#cpu,
+#memory {
+    background-color: transparent;
+    border: none;
+    padding: 2px 0px;
+    margin: 2px 0px;
+    font-family: "MesloLGS NF", monospace;
+    font-weight: 800;
+    font-size: 9px;
+    transition: all 0.3s ease;
+}
+
+#cpu {
+    color: @primary; /* Gold for CPU */
+}
+
+#memory {
+    color: @text; /* Cream for Memory */
+}
+
+/* Hover effects for interactive modules */
+#pulseaudio:hover,
+#battery:hover,
+#clock:hover,
+#custom-power:hover,
+#custom-tray-icon:hover,
+#custom-notification:hover,
+#custom-dnd:hover {
+    background-color: rgba(212, 175, 55, 0.15);
+    border-color: rgba(212, 175, 55, 0.5);
+}
+
+#custom-notification {
+    color: @primary;
+}
+
+#custom-dnd {
+    color: @subtext0;
+}
+
+/* Compact Workspace styling */
+#workspaces {
+    background-color: rgba(18, 18, 18, 0.75);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 10px;
+    padding: 3px 0px;
+    margin: 4px 5px;
+}
+
+#workspaces button {
+    padding: 4px 0px;
+    font-size: 16px;
+    background-color: transparent;
+    color: @subtext1;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    min-width: 24px;
+    margin: 2px 0px;
+}
+
+#workspaces button:hover {
+    color: @primary;
+    background: transparent;
+    box-shadow: inherit;
+    text-shadow: inherit;
+}
+
+#workspaces button.active {
+    color: #080808;
+    background-color: #d4af37;
+    border: 1px solid #d4af37;
+}
+
+#workspaces button.empty {
+    color: @accent_red;
+}
+
+#workspaces button.persistent,
+#workspaces button.visible {
+    color: @subtext0;
+}
+
+#workspaces button.urgent {
+    background-color: @accent_red;
+    color: @text;
+}
+
+/* Color Accent overrides for specific modules */
+#clock {
+    color: @primary;
+    font-weight: 800;
+    padding: 8px 0px;
+}
+
+#mpris {
+    color: @subtext0;
+}
+
+#mpris.paused {
+    color: @subtext1;
+}
+
+#submap {
+    color: @accent_yellow;
+}
+
+#pulseaudio {
+    color: @secondary;
+}
+
+#pulseaudio.muted {
+    color: @subtext1;
+}
+
+#battery {
+    color: @primary;
+}
+
+#battery.charging, #battery.plugged {
+    color: @accent_teal;
+}
+
+@keyframes blink {
+    to {
+        background-color: @accent_red;
+        color: @text;
+    }
+}
+
+#battery.critical:not(.charging) {
+    background-color: rgba(128, 0, 32, 0.3);
+    color: @text;
+    border-color: @accent_red;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+/* System Tray inside the Drawer */
+#tray {
+    background-color: rgba(18, 18, 18, 0.75);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 10px;
+    padding: 6px 0px;
+    margin: 0px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: @accent_red;
+}
+
+#tray menu {
+    background-color: @base;
+    border: 1px solid @primary;
+    color: @text;
+}
+
+#custom-power {
+    color: @accent_red;
+    font-size: 13px;
+    margin-top: 6px;
+}
+
+/* Custom Drawer styles */
+#custom-tray-icon {
+    color: @primary;
+    font-size: 12px;
+    margin-bottom: 0px;
+}

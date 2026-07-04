@@ -1,0 +1,164 @@
+/* Gothic Gold & Deep Black SwayNC Stylesheet */
+
+@define-color base            #080808; /* Deep Gothic Black */
+@define-color mantle          #121212; /* Dark Charcoal */
+@define-color text            #f5f5dc; /* Cream / Off-white */
+@define-color subtext0        #cdaf7d; /* Antique Gold */
+@define-color subtext1        #8a7355; /* Muted Bronze */
+@define-color primary         #d4af37; /* Antique Gold */
+@define-color accent_red      #800020; /* Deep Burgundy / Blood-red */
+
+* {
+    font-family: "MesloLGS NF", sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* Control Center Container */
+.control-center {
+    background-color: rgba(8, 8, 8, 0.85);
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    border-radius: 14px;
+    color: @text;
+    padding: 10px;
+}
+
+/* Control Center Title Widget */
+.widget-title {
+    margin: 8px;
+}
+
+.widget-title > label {
+    font-size: 16px;
+    color: @primary;
+}
+
+.widget-title > button {
+    background-color: rgba(18, 18, 18, 0.75);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 8px;
+    color: @text;
+    padding: 4px 12px;
+    transition: all 0.3s ease;
+}
+
+.widget-title > button:hover {
+    background-color: rgba(212, 175, 55, 0.15);
+    border-color: @primary;
+}
+
+/* Do Not Disturb Widget */
+.widget-dnd {
+    margin: 8px;
+    padding: 4px;
+    background-color: rgba(18, 18, 18, 0.5);
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    border-radius: 8px;
+}
+
+.widget-dnd > switch {
+    font-size: 11px;
+    background-color: rgba(18, 18, 18, 0.75);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 6px;
+    color: @text;
+}
+
+.widget-dnd > switch:checked {
+    background-color: @primary;
+    color: @base;
+}
+
+/* Notification Card Container */
+.notification {
+    margin: 6px 0px;
+    padding: 0px;
+    border-radius: 12px;
+    background-color: transparent;
+}
+
+/* Inner card styling */
+.notification-content {
+    background-color: rgba(18, 18, 18, 0.75);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 12px;
+    padding: 10px;
+    color: @text;
+    transition: all 0.3s ease;
+}
+
+.notification-content:hover {
+    border-color: @primary;
+}
+
+/* Custom styles for critical notifications */
+.notification.critical .notification-content {
+    border-color: @accent_red;
+    background-color: rgba(128, 0, 32, 0.15);
+}
+
+/* Notification Content Styling */
+.notification-default {
+    padding: 4px;
+}
+
+.notification-default .summary {
+    font-size: 14px;
+    color: @primary;
+}
+
+.notification-default .body {
+    font-size: 12px;
+    color: @text;
+}
+
+/* Close buttons on notification cards */
+.close-button {
+    background-color: transparent;
+    color: @subtext1;
+    border-radius: 6px;
+    padding: 2px;
+    transition: all 0.3s ease;
+}
+
+.close-button:hover {
+    background-color: rgba(128, 0, 32, 0.2);
+    color: @accent_red;
+}
+
+/* MPRIS Media Player Widget */
+.widget-mpris {
+    margin: 8px;
+    padding: 10px;
+    background-color: rgba(18, 18, 18, 0.75);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 12px;
+}
+
+.widget-mpris-player {
+    padding: 4px;
+}
+
+.widget-mpris-title {
+    font-size: 14px;
+    color: @primary;
+}
+
+.widget-mpris-subtitle {
+    font-size: 12px;
+    color: @subtext0;
+}
+
+.widget-mpris-controller > button {
+    background-color: rgba(18, 18, 18, 0.5);
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    border-radius: 8px;
+    color: @text;
+    padding: 4px;
+    transition: all 0.3s ease;
+}
+
+.widget-mpris-controller > button:hover {
+    background-color: rgba(212, 175, 55, 0.15);
+    border-color: @primary;
+}
